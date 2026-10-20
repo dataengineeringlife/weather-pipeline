@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# data and the warehouse are rebuilt by the pipeline
+data/
+warehouse.duckdb
+warehouse.duckdb.wal
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml
+
+# secrets
+.env
+
+# Airflow (standalone and Docker)
+.venv-airflow/
+.airflow/
+logs/
+plugins/
+config/

@@ -1,0 +1,16 @@
+# Lets the official Airflow docker-compose.yaml run this project.
+# Docker Compose merges this file into docker-compose.yaml automatically.
+x-project: &project
+  environment:
+    PROJECT_DIR: /opt/airflow/project
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    _PIP_ADDITIONAL_REQUIREMENTS: "requests duckdb dbt-duckdb"
+  volumes:
+    - ./:/opt/airflow/project
+
+services:
+  airflow-apiserver: *project
+  airflow-scheduler: *project
+  airflow-dag-processor: *project
+  airflow-triggerer: *project
+  airflow-worker: *project
