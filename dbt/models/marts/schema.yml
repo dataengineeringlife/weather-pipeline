@@ -1,1 +1,10 @@
-
+models:
+  - name: weather_sales
+    columns:
+      - name: day
+        data_tests: [not_null]
+      - name: city
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['new_york', 'london']
