@@ -1,0 +1,7 @@
+# dbt looks for profiles.yml in the folder you run it from, so `cd dbt && dbt build` just works.
+weather:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../warehouse.duckdb
